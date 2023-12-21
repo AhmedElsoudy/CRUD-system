@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="display-4 fw-bold m-auto mt-3">Bookmarker</h1>
+    <div class="bookmenu w-50 shadow-lg my-5 m-auto p-lg-5 rounded-3">
+      <h2 class="m-auto fs-4 mb-5">
+        <span><i class="fa-solid fa-bookmark px-2"></i></span>Bookmark your
+        favorite sites <span><i class="fa-solid fa-bookmark px-2"></i></span>
+      </h2>
+      <label for="" class="my-2 fw-bold"
+        ><i class="fa-solid fa-book-bookmark"></i> This site</label
+      >
+      <input
+        type="text"
+        id="siteName"
+        class="form-control mb-3"
+        placeholder="Bookmark Name"
+      />
+      <label for="" class="my-2 fw-bold"
+        ><i class="fa-solid fa-link"></i> Site URL</label
+      >
+      <input type="text" id="siteUrl" class="form-control" placeholder="Website URL" />
+      <button class="btn btn-danger my-5 px-5 mx-auto" id="addbtn" onclick="getInputValue()">Add Site</button>
+      <button class="btn btn-danger my-5 px-5 mx-auto" id="updatebtn" onclick="updateSite()">Update Site</button>
+      <input type="text" onkeyup="searchSite(this.value)" class="form-control w-50" placeholder="Search..." />
+    </div>
+    <div class="container">
+      <div class="row" id="rowId">
+        
+      </div>
+    </div>
+    <script src="logic/code.js"></script>
+  </body>
+</html>

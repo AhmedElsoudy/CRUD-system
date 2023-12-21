@@ -1,0 +1,66 @@
+body{
+    background-color: #FEFAE0;
+}
+h1{
+    font-family: 'Pacifico', cursive;
+    position: relative;
+    width: fit-content;
+    z-index: 100;
+}
+h1::before{
+    content: "";
+    position: absolute;
+    background-color: #B99470;
+    width: 100%;
+    height: 10%;
+    z-index: -1;
+    bottom:0;
+    top: 100;
+    left: 0;
+    right: 0;
+}
+h1:hover::before{
+height: 80%;
+transition: height 0.4s;
+}
+
+.bookmenu{
+    background-color: #5F6F52;
+}
+.bookmenu h2{
+    width: fit-content;
+    color: #B99470;
+}
+
+.bookmenu .btn-danger {
+    --bs-btn-color:#FEFAE0;
+    --bs-btn-bg: #B99470 ;
+    --bs-btn-border-color: #5F6F52;
+    --bs-btn-hover-color: #FEFAE0;
+    --bs-btn-hover-bg: #B99470;
+    --bs-btn-hover-border-color: #5F6F52;
+}
+.inner{
+    background-color: #A9B388;
+}
+.inner .btn-go{
+    --bs-btn-color:#FEFAE0;
+    --bs-btn-bg: #5F6F52 ;
+    --bs-btn-border-color: #5F6F52;
+    --bs-btn-hover-color: #FEFAE0;
+    --bs-btn-hover-bg: #5F6F52;
+    --bs-btn-hover-border-color: #5F6F52;
+}
+.inner span{
+    background-color: #FEFAE0;
+}
+.inner h3 span{
+    background-color: #B99470;
+}
+.inner .btn-update{
+    background-color: #B99470;
+}
+
+#updatebtn{
+    display: none;
+}
