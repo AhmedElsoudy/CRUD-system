@@ -16,6 +16,7 @@ function getInputValue(){
     sites.push(site)
     localStorage.setItem('websites',JSON.stringify(sites))
     displaySites()
+    clearAll()
 }
 function displaySites(){
     var cartona = ''
@@ -86,4 +87,10 @@ function updateSite(){
   sites[updateIndex].url = siteUrlInput.value
   localStorage.setItem('websites',JSON.stringify(sites))
   displaySites()
+  clearAll()
+}
+
+function clearAll(){
+  siteNameInput.value = ""
+  siteUrlInput.value = ""
 }
