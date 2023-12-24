@@ -43,7 +43,8 @@
               <label for="" class="my-2 fw-bold"
                 ><i class="fa-solid fa-link"></i> Site URL</label
               >
-              <input type="text" id="siteUrl" class="form-control" placeholder="Website URL" />
+              <input type="text" oninput="validationEmail()" id="siteUrl" class="form-control" placeholder="Website URL"  />
+              <div class="alert alert-danger d-none" id="warning">invalid Email</div>
               <button class="btn btn-danger my-5 px-5 mx-auto" id="addbtn" onclick="getInputValue()">Add Site</button>
               <button class="btn btn-danger my-5 px-5 mx-auto" id="updatebtn" onclick="updateSite()">Update Site</button>
               <input type="text" onkeyup="searchSite(this.value)" class="form-control w-50" placeholder="Search..." />

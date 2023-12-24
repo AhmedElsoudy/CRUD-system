@@ -9,7 +9,8 @@ if(localStorage.getItem('websites') != null){
     displaySites()
 }
 function getInputValue(){
-    var site = {
+    if(validationEmail()){
+      var site = {
         name: siteNameInput.value,
         url: siteUrlInput.value
     }
@@ -17,6 +18,7 @@ function getInputValue(){
     localStorage.setItem('websites',JSON.stringify(sites))
     displaySites()
     clearAll()
+    }
 }
 function displaySites(){
     var cartona = ''
@@ -94,3 +96,49 @@ function clearAll(){
   siteNameInput.value = ""
   siteUrlInput.value = ""
 }
+
+
+var warningInput = document.getElementById('warning')
+
+function validationEmail(){
+  var regexEmail = /^(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?\/[a-zA-Z0-9]{2,}|((https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?)|(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?$/
+  var testEmail = siteUrlInput.value
+  if(regexEmail.test(testEmail)){
+    siteUrlInput.classList.add("is-valid")
+    siteUrlInput.classList.remove("is-invalid")
+      warningInput.classList.add('d-none')
+    return true
+    
+  }else{
+    siteUrlInput.classList.add("is-invalid")
+    siteUrlInput.classList.remove("is-valid")
+    if(siteUrlInput.value != ""){
+      warningInput.classList.remove('d-none')
+    }
+    
+    return false
+  }
+}
+
+/** 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ *  
+
+  if(regexEmail.test(testEmail)){
+    siteUrlInput.classList.add("is-valid")
+    siteUrlInput.classList.remove("is-invalid")
+    return true
+  }else{
+    siteUrlInput.classList.add("is-invalid")
+    siteUrlInput.classList.remove("is-valid")
+    return false
+  }
+ * 
+ * 
+ * 
+ * */ 
